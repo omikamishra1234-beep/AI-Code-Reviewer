@@ -36,13 +36,13 @@ git clone <repository-url>
 cd AI-Code-Reviewer
 
 
-### **2. Create a Virtual Environment
+### **2. Create a Virtual Environment**
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # For macOS/Linux
 # On Windows:
 # .\venv\Scripts\activate
 
-### **3. Install Dependencies
+### **3. Install Dependencies**
 ```bash
 pip install -r [requirements.txt](http://_vscodecontentref_/1)
