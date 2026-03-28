@@ -39,9 +39,6 @@ AI-Code-Reviewer/
 ├── .env.dist                # Env template
 ├── .env                     # Secrets (ignored in git)
 │
-├── routes/
-│   └── review.py            # API endpoints
-│
 └── README.md
 ```
 
@@ -150,27 +147,6 @@ curl -X POST "http://localhost:8000/analyze" \
 Open:
 http://localhost:8000/docs
 
-## 🐳 Docker (Optional)
-
-Dockerfile:
-
-```
-FROM python:3.11
-
-WORKDIR /app
-COPY . .
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
-Run:
-
-```
-docker build -t ai-code-reviewer .
-docker run -p 8000:8000 ai-code-reviewer
-```
 
 ## 🔐 Security Notes
 
