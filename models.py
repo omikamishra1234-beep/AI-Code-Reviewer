@@ -5,11 +5,8 @@ class CodeInput(BaseModel):
     code: str
     language: Optional[str] = "python"
 
-class FeedbackItem(BaseModel):
-    category: str = Field(..., description="Bugs, Inefficiencies, or Improvements")
-    issue: str
-    recommendation: str
-
 class AnalysisResponse(BaseModel):
-    summary: str
-    feedback: List[FeedbackItem]
+    score: int = Field(..., description="A score from 0 to 100 representing code quality.")
+    keep: List[str] = Field(..., description="Features to retain, with explanation.")
+    remove: List[str] = Field(..., description="Features to remove, with explanation.")
+    improve: List[str] = Field(..., description="Features to improve, with explanation.")

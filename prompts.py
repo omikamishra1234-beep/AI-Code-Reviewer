@@ -1,5 +1,5 @@
 ANALYSIS_PROMPT = """
-Analyze the following code snippet and provide a structured JSON response identifying bugs, inefficiencies, or potential improvements.
+Analyze the following code snippet and provide a structured JSON response evaluating its quality.
 
 Code to analyze:
 ```
@@ -7,11 +7,16 @@ Code to analyze:
 ```
 
 Respond strictly in valid JSON format with the following keys:
-"summary": A brief high-level overview of the code's quality.
-"feedback": A list of objects, each containing:
-  - "category": Choose one of ["Bugs", "Inefficiencies", "Improvements"]
-  - "issue": A concise description of the problem or opportunity.
-  - "recommendation": Actionable steps to address the issue.
+- "score": A score from 0 to 100 representing overall code quality.
+- "keep": A list of strings. DO NOT provide objects or dictionaries. Each string should be in the format: "Feature name & Explanation".
+- "remove": A list of strings. DO NOT provide objects or dictionaries. Each string should be in the format: "Feature name & Explanation".
+- "improve": A list of strings. DO NOT provide objects or dictionaries. Each string should be in the format: "Feature name & Explanation".
 
-JSON Response:
+JSON Response Example:
+{{
+  "score": 90,
+  "keep": ["Function modularity & Improves testability", "Type hints & Enhances reliability"],
+  "remove": ["Redundant comments & Reduces clutter"],
+  "improve": ["Error handling & Prevents crashes"]
+}}
 """
