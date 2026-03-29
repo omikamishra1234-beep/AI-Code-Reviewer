@@ -4,7 +4,7 @@ from models import CodeInput, AnalysisResponse
 from services import analyze_code_logic
 from config import GEMINI_MODEL_NAME
 
-app = FastAPI(title="Gemini Code Analyzer API")
+app = FastAPI(title="CodeCritic API")
 
 app.add_middleware(
     CORSMiddleware,
