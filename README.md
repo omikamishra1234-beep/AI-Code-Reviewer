@@ -1,8 +1,6 @@
-# 🤖 AI Code Reviewer
+# 🤖 CodeCritic
 
 PHD Project for Generative AI with Large Language Models (MSAI-630-M50)
-
-## 📌 Overview
 
 The AI Code Reviewer is a FastAPI-based application that uses Google Gemini AI to analyze code snippets and provide structured feedback.
 
